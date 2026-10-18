@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
-# Dependency (node)
+# Dependency (node), from the distribution: the NodeSource repository used
+# upstream no longer installs on Debian 11 or 13
 node:
   pkg:
-    use_upstream_repo: true    # Debian family only
+    use_upstream_repo: false
 
 packages:
   pkgs:
