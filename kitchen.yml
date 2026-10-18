@@ -51,15 +51,10 @@ suites:
       - debian-13-3006-27
       - debian-11-3006-27
     provisioner:
-      dependencies:
-        - name: node
-          repo: git
-          source: https://github.com/saltstack-formulas/node-formula.git
       state_top:
         base:
           '*':
             - packages._mapdata
-            - node
             - packages
       pillars:
         top.sls:

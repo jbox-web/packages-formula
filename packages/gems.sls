@@ -10,7 +10,9 @@
 {%- set wanted_gems = packages.gems.wanted %}
 {%- set unwanted_gems = packages.gems.unwanted %}
 
-{%- if wanted_gems or unwanted_gems %}
+{#- Salt 3008 removed the `gem` module and state from core (community
+    extensions moved out): declaring gem states there fails the run. #}
+{%- if (wanted_gems or unwanted_gems) and grains['saltversioninfo'][0] < 3008 %}
   {%- if req_states %}
 include:
     {%- for dep in req_states %}

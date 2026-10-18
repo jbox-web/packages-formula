@@ -60,21 +60,11 @@ values:
     goget: []
   kernel: linux
   npms:
-    dir: /home/kitchen/npms
-    group: kitchen
-    mode: '0755'
     required:
       pkgs: []
-      states:
-      - node.package.install
-    unwanted:
-    - gist
-    user: kitchen
-    wanted:
-    - '@low-systems/example@1.1.58'
-    - hello-world-npm
-    - sax
-    - coffee-script@1.0.1
+      states: []
+    unwanted: []
+    wanted: []
   pips:
     config:
       global:

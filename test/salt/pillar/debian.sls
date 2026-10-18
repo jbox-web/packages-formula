@@ -1,12 +1,6 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
-# Dependency (node), from the distribution: the NodeSource repository used
-# upstream no longer installs on Debian 11 or 13
-node:
-  pkg:
-    use_upstream_repo: false
-
 packages:
   pkgs:
     # A dict of "package: version" pairs:
@@ -76,34 +70,6 @@ packages:
     #   - test-snapd-hello-classic
     unwanted:
       - bare
-
-  # yamllint disable rule:line-length
-  npms:
-    dir: /home/kitchen/npms   # The target directory in which to install the package, or None for global installation
-    user: kitchen             # The user to run NPM with (and to assign to `dir`)
-    group: kitchen            # The group to assign to `dir`
-    mode: '0755'              # The permissions to assign to `dir`
-    # registry: None          # The NPM registry from which to install the package
-    # env: None               # A list of environment variables to be set prior to execution
-    # force_reinstall: False  # Install the package even if it is already installed
-    required:
-      states:
-        - node.package.install
-    wanted:
-      # Valid formats:
-      #
-      # @google-cloud/bigquery@^0.9.6
-      # @foobar
-      # buffer-equal-constant-time@1.0.1
-      # coffee-script
-      # You need to quote the package if it starts with '@'
-      - '@low-systems/example@1.1.58'
-      - hello-world-npm
-      - sax
-      - coffee-script@1.0.1
-    unwanted:
-      - gist
-  # yamllint enable rule:line-length
 
   archives:
     wanted:
